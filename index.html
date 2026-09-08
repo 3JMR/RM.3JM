@@ -8,15 +8,16 @@
 *{box-sizing:border-box}body{margin:0;font-family:Cairo,sans-serif;background:#07060b;color:#fff}
 :root{--p:#922cff;--p2:#c77aff;--card:#12101a;--line:#2a2035;--muted:#a9a3b4}
 header{position:sticky;top:0;z-index:10;background:#08070bdd;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-nav{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:20px}.logo{width:48px;height:48px;border-radius:13px;object-fit:cover;box-shadow:0 0 28px #922cff66}.name{font-weight:900;letter-spacing:.5px}
+nav{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}.logo{width:48px;height:48px;border-radius:13px;object-fit:cover;box-shadow:0 0 28px #922cff66}.name{font-weight:900;letter-spacing:.5px}
 nav a{color:#d5d0dc;text-decoration:none;font-size:13px;font-weight:700}nav a:hover{color:var(--p2)}.store{background:linear-gradient(135deg,var(--p),#5b18bd);padding:10px 15px;border-radius:11px}
-.hero{max-width:1180px;margin:auto;padding:75px 20px 45px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero{max-width:1180px;margin:auto;padding:75px 20px 30px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
 .tag{display:inline-block;border:1px solid #8e37db66;background:#922cff12;color:#d9baff;border-radius:50px;padding:6px 12px;font-size:12px;font-weight:800}
 h1{font-size:clamp(45px,7vw,82px);line-height:.98;margin:18px 0;background:linear-gradient(90deg,#fff,#d5a9ff,#8c27ff);-webkit-background-clip:text;color:transparent}
 .hero p{max-width:620px;color:var(--muted);line-height:2;font-size:15px}.buttons{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
 .btn{padding:12px 19px;border-radius:12px;text-decoration:none;font-weight:900;font-size:13px}.main{background:linear-gradient(135deg,var(--p),#5d18bd)}.ghost{border:1px solid var(--line);color:#d4cfe0;background:#ffffff05}
 .heroBox{height:370px;border:1px solid #3a2350;border-radius:28px;background:radial-gradient(circle,#4b176a 0,#17101f 42%,#0c0a10 75%);display:grid;place-items:center;box-shadow:0 0 90px #922cff17;overflow:hidden}.heroBox img{width:100%;height:100%;object-fit:cover;opacity:.92}
-section{max-width:1180px;margin:auto;padding:38px 20px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}.head h2{margin:0;font-size:27px}.head span{font-size:12px;color:var(--p2)}
+section{max-width:1180px;margin:auto;padding:38px 20px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px;gap:10px;flex-wrap:wrap}.head h2{margin:0;font-size:27px}.head span{font-size:12px;color:var(--p2)}
+.tabs{max-width:1180px;margin:0 auto;padding:0 20px 12px;display:flex;gap:10px;flex-wrap:wrap}.tab{border:1px solid var(--line);background:#ffffff06;color:#d7d2e0;padding:11px 15px;border-radius:12px;cursor:pointer;font:inherit;font-weight:800;font-size:13px}.tab.active{background:linear-gradient(135deg,var(--p),#5c17bc);border-color:transparent}.panel{display:none}.panel.active{display:block}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:linear-gradient(145deg,#15121e,#0e0c13);border:1px solid var(--line);border-radius:19px;padding:12px;overflow:hidden}.pic{height:210px;border-radius:15px;overflow:hidden;background:#0a0910;display:grid;place-items:center}.pic img{width:100%;height:100%;object-fit:cover}.card h3{margin:12px 0 6px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.8;min-height:48px}.bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}.price{color:#d9baff;font-weight:900}.buy{border:0;background:linear-gradient(135deg,var(--p),#5c17bc);color:#fff;padding:10px 13px;border-radius:10px;cursor:pointer;font-family:inherit;font-weight:800}
 .feature{padding:22px;border:1px solid var(--line);border-radius:17px;background:#100e16}.feature b{font-size:15px}.feature p{color:var(--muted);font-size:12px;line-height:1.8}
 footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:#777080;padding:25px;font-size:11px}
@@ -27,19 +28,26 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
 </head>
 <body>
 <header><nav><img class="logo" src="logo.jpeg"><span class="name">RESPECT MASTER</span>
-<a href="#home">الرئيسية</a><a href="#cars">السيارات</a><a href="#houses">البيوت</a><a href="#bundles">الحزم</a><a href="#payment">الدفع</a><button class="cartButton" id="cartButton" type="button">السلة <span class="cartCount" id="cartCount">0</span></button>
+<a href="#home">الرئيسية</a><a href="#payment">الدفع</a><button class="cartButton" id="cartButton" type="button">السلة <span class="cartCount" id="cartCount">0</span></button>
 </nav></header>
 
 <main id="home">
 <div class="hero"><div><span class="tag">✦ OFFICIAL FIVEM STORE</span><h1>RESPECT<br>MASTER</h1>
 <p>متجر السيارات والبيوت والحزم الخاص بسيرفر FiveM — واجهة فخمة وسهلة التعديل.</p>
-<div class="buttons"><a class="btn main" href="#cars">استعرض المتجر</a><a class="btn ghost" href="#payment">طريقة الدفع</a></div></div>
+<div class="buttons"><a class="btn main" href="#featured">استعرض المتجر</a><a class="btn ghost" href="#payment">طريقة الدفع</a></div></div>
 <div class="heroBox"><img src="logo.jpeg"></div></div>
 
-<section id="featured"><div class="head"><h2>السيارات المميزة</h2><span>Featured Vehicles</span></div><div class="grid" id="featuredGrid"></div></section>
-<section id="cars"><div class="head"><h2>السيارات</h2><span>Vehicles</span></div><div class="grid" id="carsGrid"></div></section>
-<section id="houses"><div class="head"><h2>البيوت</h2><span>Houses</span></div><div class="grid" id="housesGrid"></div></section>
-<section id="bundles"><div class="head"><h2>الحزم والأسعار</h2><span>Bundles & Pricing</span></div><div class="grid" id="bundlesGrid"></div></section>
+<div class="tabs" role="tablist" aria-label="أقسام المتجر">
+  <button class="tab active" type="button" data-target="featured">السيارات المميزة</button>
+  <button class="tab" type="button" data-target="cars">السيارات</button>
+  <button class="tab" type="button" data-target="houses">البيوت</button>
+  <button class="tab" type="button" data-target="bundles">الحزم والأسعار</button>
+</div>
+
+<section id="featured" class="panel active"><div class="head"><h2>السيارات المميزة</h2><span>Featured Vehicles</span></div><div class="grid" id="featuredGrid"></div></section>
+<section id="cars" class="panel"><div class="head"><h2>السيارات</h2><span>Vehicles</span></div><div class="grid" id="carsGrid"></div></section>
+<section id="houses" class="panel"><div class="head"><h2>البيوت</h2><span>Houses</span></div><div class="grid" id="housesGrid"></div></section>
+<section id="bundles" class="panel"><div class="head"><h2>الحزم والأسعار</h2><span>Bundles & Pricing</span></div><div class="grid" id="bundlesGrid"></div></section>
 <section id="payment"><div class="head"><h2>الدفع</h2><span>Payment</span></div>
 <div class="feature"><b>💳 PayPal</b><p id="paymentText">رابط PayPal غير مضاف حاليًا. أضفه لاحقًا في ملف products.js.</p>
 <div class="buttons"><a id="payBtn" class="btn main" href="#" onclick="return false">الدفع عبر PayPal</a></div></div></section>
@@ -61,6 +69,16 @@ if(STORE.paypalUrl){
   const b=document.getElementById("payBtn"); b.href=STORE.paypalUrl;b.target="_blank";b.rel="noopener";b.onclick=null;
   document.getElementById("paymentText").textContent="ادفع عبر PayPal من خلال الرابط الرسمي للمتجر.";
 }
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.target).classList.add('active');
+    document.getElementById(tab.dataset.target).scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
 
 const cartKey = "respect-master-cart";
 let cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
