@@ -1,10 +1,5 @@
-/*
-  RESPECT MASTER
-  لتعديل المتجر: غيّر فقط البيانات الموجودة هنا.
-  الصور: ضع ملفات الصور داخل مجلد images واكتب اسم الملف في image.
-*/
 const STORE = {
-  paypalUrl: "", // ضع رابط PayPal هنا لاحقاً
+  paypalUrl: "https://www.paypal.com/ncp/payment/XVW2CC295GCMW", // رابط PayPal
 
   featured: [
     { name: "CAR NAME #01", price: "€00", image: "images/car1.jpg", description: "وصف السيارة هنا" },
