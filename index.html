@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RESPECT MASTER — FiveM Store</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap');
+*{box-sizing:border-box}body{margin:0;font-family:Cairo,sans-serif;background:#07060b;color:#fff}
+:root{--p:#922cff;--p2:#c77aff;--card:#12101a;--line:#2a2035;--muted:#a9a3b4}
+header{position:sticky;top:0;z-index:10;background:#08070bdd;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:20px}.logo{width:48px;height:48px;border-radius:13px;object-fit:cover;box-shadow:0 0 28px #922cff66}.name{font-weight:900;font-size:19px;margin-left:auto}
+nav a{color:#d5d0dc;text-decoration:none;font-size:13px;font-weight:700}nav a:hover{color:var(--p2)}.store{background:linear-gradient(135deg,var(--p),#5b18bd);padding:10px 15px;border-radius:11px}
+.hero{max-width:1180px;margin:auto;padding:75px 20px 45px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.tag{display:inline-block;border:1px solid #8e37db66;background:#922cff12;color:#d9baff;border-radius:50px;padding:6px 12px;font-size:12px;font-weight:800}
+h1{font-size:clamp(45px,7vw,82px);line-height:.98;margin:18px 0;background:linear-gradient(90deg,#fff,#d5a9ff,#8c27ff);-webkit-background-clip:text;color:transparent}
+.hero p{max-width:620px;color:var(--muted);line-height:2;font-size:15px}.buttons{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.btn{padding:12px 19px;border-radius:12px;text-decoration:none;font-weight:900;font-size:13px}.main{background:linear-gradient(135deg,var(--p),#5d18bd)}.ghost{border:1px solid var(--line);color:#ddd;background:#11101a}
+.heroBox{height:370px;border:1px solid #3a2350;border-radius:28px;background:radial-gradient(circle,#4b176a 0,#17101f 42%,#0c0a10 75%);display:grid;place-items:center;box-shadow:0 0 90px #922cff17}.heroBox img{width:205px;height:205px;object-fit:cover;border-radius:45px;box-shadow:0 0 55px #922cff88}
+section{max-width:1180px;margin:auto;padding:38px 20px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}.head h2{margin:0;font-size:27px}.head span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:linear-gradient(145deg,#15121e,#0e0c13);border:1px solid var(--line);border-radius:19px;padding:12px;overflow:hidden}.pic{height:175px;border-radius:14px;background:#15111c;overflow:hidden;display:grid;place-items:center;color:#bfa7d6;font-size:12px}.pic img{width:100%;height:100%;object-fit:cover;display:block}.card h3{font-size:17px;margin:13px 3px 3px}.card p{color:var(--muted);font-size:11px;margin:0 3px}.bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.price{font-weight:900;color:#d6adff}.buy{background:#fff;color:#09070d;text-decoration:none;padding:8px 13px;border-radius:9px;font-size:11px;font-weight:900}
+.feature{padding:22px;border:1px solid var(--line);border-radius:17px;background:#100e16}.feature b{font-size:15px}.feature p{color:var(--muted);font-size:12px;line-height:1.8}
+footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:#777080;padding:25px;font-size:11px}
+.cartButton{border:1px solid #8e37db66;background:#922cff18;color:#fff;padding:10px 14px;border-radius:11px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}.cartCount{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-right:5px;padding:0 5px;border-radius:10px;background:var(--p);font-size:11px}
+.cartOverlay{position:fixed;inset:0;z-index:20;background:#0009;opacity:0;pointer-events:none;transition:opacity .2s}.cartOverlay.open{opacity:1;pointer-events:auto}.cartPanel{position:absolute;top:0;left:0;width:min(390px,100%);height:100%;padding:24px 20px;background:#100e16;border-right:1px solid var(--line);box-shadow:15px 0 50px #0008;transform:translateX(-100%);transition:transform .25s;display:flex;flex-direction:column}.cartOverlay.open .cartPanel{transform:translateX(0)}.cartHead{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:15px}.cartHead h2{font-size:20px;margin:0}.closeCart{border:0;background:none;color:#fff;font-size:25px;cursor:pointer}.cartItems{flex:1;overflow:auto;padding:12px 0}.cartItem{display:grid;grid-template-columns:58px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #2a203580}.cartItem img{width:58px;height:58px;border-radius:10px;object-fit:cover;background:#181321}.cartItem h3{font-size:13px;margin:0 0 4px}.cartItem p{color:var(--muted);font-size:11px;margin:0}.removeItem{border:0;background:none;color:#e88bba;cursor:pointer;font-size:11px}.cartEmpty{text-align:center;color:var(--muted);padding:35px 5px;font-size:13px}.cartFoot{border-top:1px solid var(--line);padding-top:16px}.cartTotal{display:flex;justify-content:space-between;font-weight:900;margin-bottom:13px}.cartCheckout{display:block;text-align:center;width:100%;border:0;cursor:pointer}
+@media(max-width:760px){nav a{display:none}.hero{grid-template-columns:1fr;padding-top:45px}.heroBox{height:280px}.grid{grid-template-columns:1fr 1fr}}@media(max-width:500px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><nav><img class="logo" src="logo.jpeg"><span class="name">RESPECT MASTER</span>
+<a href="#home">الرئيسية</a><a href="#cars">السيارات</a><a href="#houses">البيوت</a><a href="#bundles">الحزم</a><a href="#payment">الدفع</a><button class="cartButton" id="cartButton" type="button">السلة <span class="cartCount" id="cartCount">0</span></button></nav></header>
+
+<main id="home">
+<div class="hero"><div><span class="tag">✦ OFFICIAL FIVEM STORE</span><h1>RESPECT<br>MASTER</h1>
+<p>متجر السيارات والبيوت والحزم الخاص بسيرفر FiveM — واجهة فخمة وسهلة التعديل.</p>
+<div class="buttons"><a class="btn main" href="#cars">استعرض المتجر</a><a class="btn ghost" href="#payment">طريقة الدفع</a></div></div>
+<div class="heroBox"><img src="logo.jpeg"></div></div>
+
+<section id="featured"><div class="head"><h2>السيارات المميزة</h2><span>Featured Vehicles</span></div><div class="grid" id="featuredGrid"></div></section>
+<section id="cars"><div class="head"><h2>السيارات</h2><span>Vehicles</span></div><div class="grid" id="carsGrid"></div></section>
+<section id="houses"><div class="head"><h2>البيوت</h2><span>Houses</span></div><div class="grid" id="housesGrid"></div></section>
+<section id="bundles"><div class="head"><h2>الحزم والأسعار</h2><span>Bundles & Pricing</span></div><div class="grid" id="bundlesGrid"></div></section>
+<section id="payment"><div class="head"><h2>الدفع</h2><span>Payment</span></div>
+<div class="feature"><b>💳 PayPal</b><p id="paymentText">رابط PayPal غير مضاف حاليًا. أضفه لاحقًا في ملف products.js.</p>
+<div class="buttons"><a id="payBtn" class="btn main" href="#" onclick="return false">الدفع عبر PayPal</a></div></div></section>
+</main>
+<footer>© 2026 RESPECT MASTER — FiveM Store</footer>
+
+<script src="products.js"></script>
+<script>
+function card(p){
+  return `<article class="card">
+    <div class="pic"><img src="${p.image}" alt="${p.name}" onerror="this.style.display='none';this.parentElement.innerHTML='<span>أضف الصورة هنا</span>'"></div>
+    <h3>${p.name}</h3><p>${p.description}</p>
+    <div class="bottom"><span class="price">${p.price}</span><button class="buy" type="button" onclick="addToCart(${JSON.stringify(p).replace(/"/g, '&quot;')})">أضف للسلة</button></div>
+  </article>`;
+}
+function render(id,arr){document.getElementById(id).innerHTML=arr.map(card).join("")}
+render("featuredGrid",STORE.featured);render("carsGrid",STORE.cars);render("housesGrid",STORE.houses);render("bundlesGrid",STORE.bundles);
+if(STORE.paypalUrl){
+  const b=document.getElementById("payBtn"); b.href=STORE.paypalUrl;b.target="_blank";b.rel="noopener";b.onclick=null;
+  document.getElementById("paymentText").textContent="ادفع عبر PayPal من خلال الرابط الرسمي للمتجر.";
+}
+
+const cartKey = "respect-master-cart";
+let cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
+const cartOverlay = document.createElement("div");
+cartOverlay.className = "cartOverlay";
+cartOverlay.innerHTML = `<aside class="cartPanel" aria-label="سلة المشتريات"><div class="cartHead"><h2>سلة المشتريات</h2><button class="closeCart" type="button" aria-label="إغلاق السلة">×</button></div><div class="cartItems"></div><div class="cartFoot"><div class="cartTotal"><span>الإجمالي</span><strong></strong></div><button class="btn main cartCheckout" type="button">إتمام الطلب</button></div></aside>`;
+document.body.appendChild(cartOverlay);
+const cartItems = cartOverlay.querySelector(".cartItems");
+const cartTotal = cartOverlay.querySelector(".cartTotal strong");
+const cartCount = document.getElementById("cartCount");
+
+function priceValue(price){
+  const value = Number.parseFloat(String(price).replace(/[^0-9.,-]/g, "").replace(",", "."));
+  return Number.isFinite(value) ? value : 0;
+}
+function saveCart(){localStorage.setItem(cartKey, JSON.stringify(cart));}
+function updateCart(){
+  cartCount.textContent = cart.length;
+  cartItems.innerHTML = cart.length ? cart.map((p, i) => `<div class="cartItem"><img src="${p.image}" alt="${p.name}"><div><h3>${p.name}</h3><p>${p.price}</p></div><button class="removeItem" type="button" data-index="${i}">حذف</button></div>`).join("") : '<div class="cartEmpty">السلة فارغة حاليًا</div>';
+  cartTotal.textContent = cart.reduce((sum, p) => sum + priceValue(p.price), 0).toFixed(2) + " €";
+  cartItems.querySelectorAll(".removeItem").forEach(button => button.addEventListener("click", () => { cart.splice(Number(button.dataset.index), 1); saveCart(); updateCart(); }));
+}
+function addToCart(product){cart.push(product);saveCart();updateCart();cartOverlay.classList.add("open");}
+document.getElementById("cartButton").addEventListener("click", () => cartOverlay.classList.add("open"));
+cartOverlay.addEventListener("click", event => {if(event.target === cartOverlay || event.target.closest(".closeCart")) cartOverlay.classList.remove("open")});
+cartOverlay.querySelector(".cartCheckout").addEventListener("click", () => {
+  if(!cart.length) return;
+  document.getElementById("payment").scrollIntoView({behavior:"smooth"});
+  cartOverlay.classList.remove("open");
+});
+updateCart();
+</script>
+</body></html>
