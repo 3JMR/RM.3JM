@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800;900&display=swap');
 *{box-sizing:border-box}body{margin:0;font-family:Cairo,sans-serif;background:#07060b;color:#fff}
 :root{--p:#922cff;--p2:#c77aff;--card:#12101a;--line:#2a2035;--muted:#a9a3b4}
+body.modal-open{overflow:hidden}
 header{position:sticky;top:0;z-index:10;background:#08070bdd;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 nav{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}.logo{width:48px;height:48px;border-radius:13px;object-fit:cover;box-shadow:0 0 28px #922cff66}.name{font-weight:900;letter-spacing:.5px}
 nav a{color:#d5d0dc;text-decoration:none;font-size:13px;font-weight:700}nav a:hover{color:var(--p2)}.store{background:linear-gradient(135deg,var(--p),#5b18bd);padding:10px 15px;border-radius:11px}
@@ -23,10 +24,39 @@ section{max-width:1180px;margin:auto;padding:38px 20px}.head{display:flex;justif
 footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:#777080;padding:25px;font-size:11px}
 .cartButton{border:1px solid #8e37db66;background:#922cff18;color:#fff;padding:10px 14px;border-radius:11px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}.cartCount{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:999px;margin-right:6px;background:var(--p);font-size:11px}
 .cartOverlay{position:fixed;inset:0;z-index:20;background:#0009;opacity:0;pointer-events:none;transition:opacity .2s}.cartOverlay.open{opacity:1;pointer-events:auto}.cartPanel{position:absolute;top:0;left:0;width:min(380px,100%);height:100%;background:#0f0d15;border-right:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:15px}.cartHead{display:flex;justify-content:space-between;align-items:center}.cartHead h2{margin:0;font-size:20px}.closeCart{border:0;background:#ffffff10;color:#fff;width:36px;height:36px;border-radius:10px;cursor:pointer}.cartItems{flex:1;overflow:auto;display:flex;flex-direction:column;gap:12px}.cartItem{display:grid;grid-template-columns:68px 1fr auto;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:15px;background:#120f18}.cartItem img{width:68px;height:68px;object-fit:cover;border-radius:10px}.cartItem h3{margin:0 0 4px;font-size:14px}.cartItem p{margin:0;color:var(--muted);font-size:12px}.removeItem{border:0;background:#ff4d5f22;color:#ffb9c1;border-radius:10px;padding:9px 11px;cursor:pointer}.cartTotal{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--line)}.cartCheckout{border:0;background:linear-gradient(135deg,var(--p),#5b18bd);color:#fff;padding:12px 15px;border-radius:12px;cursor:pointer;font-family:inherit;font-weight:900}
-@media(max-width:760px){nav a{display:none}.hero{grid-template-columns:1fr;padding-top:45px}.heroBox{height:280px}.grid{grid-template-columns:1fr 1fr}}@media(max-width:500px){.grid{grid-template-columns:1fr}.head{align-items:start;gap:8px;flex-direction:column}}
+.rulesOverlay{position:fixed;inset:0;z-index:999;background:radial-gradient(circle at top,#28103f 0,#09070f 55%);display:flex;align-items:center;justify-content:center;padding:18px}.rulesCard{width:min(1200px,100%);max-height:95vh;overflow:auto;background:#0b0812;border:1px solid #6a2cff55;border-radius:28px;box-shadow:0 0 0 1px #b15cff22,0 0 50px #7b2cff33;padding:18px}.rulesHero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center;padding:10px 8px 20px;border-bottom:1px solid var(--line)}.rulesHero img{width:100%;height:100%;object-fit:cover;border-radius:22px;border:1px solid #7a2cff55}.rulesTitle{font-size:clamp(30px,4vw,62px);line-height:1.05;margin:0;background:linear-gradient(90deg,#fff,#c6b6ff,#8c27ff);-webkit-background-clip:text;color:transparent}.rulesSub{margin:10px 0 0;color:#d9baff;font-size:18px;font-weight:800}.rulesDesc{margin:14px 0 0;color:#ddd;line-height:2}.rulesGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:18px 6px}.ruleItem{border:1px solid #7a2cff77;border-radius:20px;padding:18px;background:linear-gradient(180deg,#15101f,#0d0a14);box-shadow:0 0 0 1px #a24dff18 inset}.ruleItem h3{margin:0 0 8px;font-size:18px;color:#fff}.ruleItem p{margin:0;color:#d0cadb;line-height:1.9;font-size:14px}.rulesFooter{display:flex;justify-content:center;padding:10px 0 4px}.agreeBtn{border:0;background:linear-gradient(135deg,var(--p),#5c17bc);color:#fff;padding:14px 22px;border-radius:14px;font-family:inherit;font-size:15px;font-weight:900;cursor:pointer;min-width:220px}.agreeBtn:hover{filter:brightness(1.08)}
+@media(max-width:760px){nav a{display:none}.hero{grid-template-columns:1fr;padding-top:45px}.heroBox{height:280px}.grid{grid-template-columns:1fr 1fr}.rulesHero{grid-template-columns:1fr}.rulesGrid{grid-template-columns:1fr}.rulesCard{padding:14px}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}.head{align-items:start;gap:8px;flex-direction:column}}
 </style>
 </head>
 <body>
+<div class="rulesOverlay" id="rulesOverlay" aria-modal="true" role="dialog" aria-label="لوحة القوانين">
+  <div class="rulesCard">
+    <div class="rulesHero">
+      <div>
+        <img src="logo.jpeg" alt="RESPECT MASTER rules cover">
+      </div>
+      <div>
+        <h2 class="rulesTitle">قوانين متجر<br>ريسبكت ماستر</h2>
+        <div class="rulesSub">يجب الموافقة على القوانين للدخول إلى الموقع</div>
+        <p class="rulesDesc">بقراءتك للقوانين أدناه فإنك توافق على شروط المتجر بالكامل. إذا لم توافق، يرجى عدم استخدام الموقع أو إتمام أي عملية شراء.</p>
+      </div>
+    </div>
+    <div class="rulesGrid">
+      <div class="ruleItem"><h3>01 — الشراء والدفع</h3><p>يجب التأكد من اختيار المنتج الصحيح قبل الدفع. الإدارة غير مسؤولة عن أي خطأ في اختيار المنتج.</p></div>
+      <div class="ruleItem"><h3>02 — المشتريات النهائية</h3><p>جميع المشتريات نهائية ولا يمكن استرداد المنتج إلا في حال وجود مشكلة من طرف المتجر ويتم إثباتها بالدعم.</p></div>
+      <div class="ruleItem"><h3>03 — مشاركة المنتجات والحسابات</h3><p>يمنع مشاركة المنتجات أو الحسابات المشتراة مع الآخرين، وسيتم التعامل مع المخالفة حسب القوانين.</p></div>
+      <div class="ruleItem"><h3>04 — إعادة البيع</h3><p>يمنع إعادة بيع المنتجات أو تحويلها لأي شخص آخر بدون إذن الإدارة.</p></div>
+      <div class="ruleItem"><h3>05 — استغلال الثغرات</h3><p>يمنع استغلال أي ثغرة أو خطأ في المتجر أو في طريقة الشراء، وأي محاولة من هذا النوع تؤدي إلى إيقاف الحساب ومحاسبة المخالف.</p></div>
+      <div class="ruleItem"><h3>06 — الدعم والمشاكل</h3><p>في حال وجود أي مشكلة في الطلب، يتم التواصل مع الدعم وإرفاق ر��م الطلب، وسيتم الرد بأسرع وقت ممكن.</p></div>
+      <div class="ruleItem"><h3>07 — التصرفات داخل المتجر</h3><p>يمنع الإساءة أو التهديد أو التشهير بأعضاء الإدارة أو أي من منسوبي السيرفر، وأي تجاوز في هذا الجانب سيؤدي إلى الحظر الدائم.</p></div>
+      <div class="ruleItem"><h3>08 — تعديل القوانين والأسعار</h3><p>يحق للإدارة تعديل القوانين أو الأسعار في أي وقت عند الحاجة، وسيتم إبلاغكم بالتحديثات عبر المتجر أو القنوات الرسمية.</p></div>
+    </div>
+    <div class="rulesFooter">
+      <button class="agreeBtn" id="agreeRules" type="button">أوافق وأدخل الموقع</button>
+    </div>
+  </div>
+</div>
 <header><nav><img class="logo" src="logo.jpeg"><span class="name">RESPECT MASTER</span>
 <a href="#home">الرئيسية</a><a href="#payment">الدفع</a><button class="cartButton" id="cartButton" type="button">السلة <span class="cartCount" id="cartCount">0</span></button>
 </nav></header>
@@ -47,7 +77,7 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
 <section id="featured" class="panel active"><div class="head"><h2>السيارات المميزة</h2><span>Featured Vehicles</span></div><div class="grid" id="featuredGrid"></div></section>
 <section id="cars" class="panel"><div class="head"><h2>السيارات</h2><span>Vehicles</span></div><div class="grid" id="carsGrid"></div></section>
 <section id="houses" class="panel"><div class="head"><h2>البيوت</h2><span>Houses</span></div><div class="grid" id="housesGrid"></div></section>
-<section id="bundles" class="panel"><div class="head"><h2>الحزم والأسعار</h2><span>Bundles & Pricing</span></div><div class="grid" id="bundlesGrid"></div></section>
+<section id="bundles" class="panel"><div class="head"><h2>الحزم والأ��عار</h2><span>Bundles & Pricing</span></div><div class="grid" id="bundlesGrid"></div></section>
 <section id="payment"><div class="head"><h2>الدفع</h2><span>Payment</span></div>
 <div class="feature"><b>💳 PayPal</b><p id="paymentText">رابط PayPal غير مضاف حاليًا. أضفه لاحقًا في ملف products.js.</p>
 <div class="buttons"><a id="payBtn" class="btn main" href="#" onclick="return false">الدفع عبر PayPal</a></div></div></section>
@@ -56,6 +86,13 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
 
 <script src="products.js"></script>
 <script>
+const rulesOverlay = document.getElementById('rulesOverlay');
+document.body.classList.add('modal-open');
+document.getElementById('agreeRules').addEventListener('click', () => {
+  rulesOverlay.style.display = 'none';
+  document.body.classList.remove('modal-open');
+});
+
 function card(p){
   return `<article class="card">
     <div class="pic"><img src="${p.image}" alt="${p.name}" onerror="this.style.display='none';this.parentElement.innerHTML='<span>أضف الصورة هنا</span>'"></div>
