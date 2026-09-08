@@ -14,7 +14,7 @@ const STORE = {
   ],
 
   houses: [
-    { name: "HOUSE NAME #01", price: "0 ر.س", image: "images/house1.jpg", description: "وصف البيت ومميزاته" },
+    { name: "HOUSE NAME #01", price: "130 ر.س", image: "images/house1.jpg", description: "اختار البيت فأي مكان يعجبك" },
     { name: "HOUSE NAME #02", price: "0 ر.س", image: "images/house2.jpg", description: "وصف البيت ومميزاته" },
     { name: "HOUSE NAME #03", price: "0 ر.س", image: "images/house3.jpg", description: "وصف البيت ومميزاته" }
   ],
