@@ -97,7 +97,7 @@ function updateCart(){cartCount.textContent = cart.length; cartItems.innerHTML =
 function addToCart(product){cart.push(product);saveCart();updateCart();cartOverlay.classList.add("open");}
 document.getElementById("cartButton").addEventListener("click", () => cartOverlay.classList.add("open"));
 cartOverlay.addEventListener("click", event => {if(event.target === cartOverlay || event.target.closest(".closeCart")) cartOverlay.classList.remove("open")});
-cartOverlay.querySelector(".cartCheckout").addEventListener("click", () => { if(!cart.length) return; document.getElementById("payment").scrollIntoView({behavior:"smooth"}); cartOverlay.classList.remove("open"); });
+cartOverlay.querySelector(".cartCheckout").addEventListener("click", () => { if(!cart.length) return; cartOverlay.classList.remove("open"); document.getElementById("payBtn").click(); });
 updateCart();
 </script>
 </body></html>
