@@ -27,11 +27,24 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
 .rulesOverlay{position:fixed;inset:0;z-index:999;background:radial-gradient(circle at top,#28103f 0,#09070f 55%);display:flex;align-items:center;justify-content:center;padding:18px}.rulesCard{width:min(920px,100%);background:linear-gradient(180deg,#14101b,#0b0910);border:1px solid #3a2350;border-radius:24px;padding:20px;box-shadow:0 0 60px #0008}.rulesHero{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:center;margin-bottom:18px}.rulesHero img{width:100%;border-radius:18px}.rulesTitle{margin:0;font-size:26px}.rulesSub{color:#d9baff;margin-top:8px;font-size:13px}.rulesDesc{color:var(--muted);line-height:1.9;font-size:14px}.rulesGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px;max-height:52vh;overflow-y:auto;padding-right:4px}.ruleItem{background:#ffffff05;border:1px solid var(--line);border-radius:16px;padding:14px}.ruleItem h3{margin:0 0 8px;font-size:14px}.ruleItem p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}.rulesFooter{display:flex;justify-content:center;margin-top:18px}.agreeBtn{background:linear-gradient(135deg,var(--p),#6c23cd);border:0;color:#fff;padding:13px 16px;border-radius:13px;font-weight:900;cursor:pointer}
 .checkoutOverlay{position:fixed;inset:0;z-index:30;background:#000a;display:none;align-items:center;justify-content:center;padding:18px}.checkoutOverlay.open{display:flex}.checkoutModal{width:min(460px,100%);background:linear-gradient(180deg,#15121e,#0c0a11);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 0 80px #000a}.checkoutModal h2{margin:0 0 12px;font-size:22px}.checkoutBox{display:grid;gap:12px}.checkoutRow{padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#ffffff05}.checkoutRow span{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}.checkoutRow strong{font-size:20px}.checkoutActions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}.checkoutActions button{flex:1;border:0;border-radius:12px;padding:13px 14px;font-weight:900;cursor:pointer}.confirmBtn{background:linear-gradient(135deg,var(--p),#6c23cd);color:#fff}.cancelBtn{background:#ffffff10;color:#fff;border:1px solid var(--line)!important}
 .botCheck{margin-top:12px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#ffffff05}.botCheck label{display:flex;align-items:center;gap:10px;font-size:13px;color:#e9e3f4}.botCheck input[type="checkbox"]{width:18px;height:18px}.botMsg{display:none;margin-top:10px;color:#ffb3b3;font-size:12px;line-height:1.8}.botMsg.show{display:block}
+.launchGate{position:fixed;inset:0;z-index:2000;background:radial-gradient(circle at top,#25103b 0,#09070f 55%);display:flex;align-items:center;justify-content:center;padding:18px}.launchCard{width:min(520px,100%);background:linear-gradient(180deg,#14101b,#0b0910);border:1px solid #3a2350;border-radius:24px;padding:22px;box-shadow:0 0 80px #000a;text-align:center}.launchCard h2{margin:10px 0 8px;font-size:28px}.launchCard p{margin:0;color:var(--muted);line-height:1.9;font-size:14px}.launchBtn{margin-top:16px;background:linear-gradient(135deg,var(--p),#6c23cd);border:0;color:#fff;padding:13px 16px;border-radius:13px;font-weight:900;cursor:pointer;width:100%}.launchField{margin-top:14px;display:grid;gap:10px}.launchField input{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:#ffffff08;color:#fff;font-family:inherit;text-align:center;font-size:16px}.launchError{display:none;margin-top:10px;color:#ffb3b3;font-size:12px}.launchError.show{display:block}
 @media(max-width:760px){nav a{display:none}.hero{grid-template-columns:1fr;padding-top:45px}.heroBox{height:280px}.grid{grid-template-columns:1fr 1fr}.rulesHero{grid-template-columns:1fr}.rulesGrid{grid-template-columns:1fr;max-height:58vh}.cartPanel{width:100%}}
 @media(max-width:500px){.grid{grid-template-columns:1fr}.head{align-items:start;gap:8px;flex-direction:column}}
 </style>
 </head>
 <body>
+<div class="launchGate" id="launchGate" aria-modal="true" role="dialog" aria-label="التحقق قبل الدخول">
+  <div class="launchCard">
+    <span class="tag">✦ VERIFY ACCESS</span>
+    <h2>التحقق قبل الدخول</h2>
+    <p>اكتب الرقم <strong>3</strong> للمتابعة إلى الموقع.</p>
+    <div class="launchField">
+      <input type="text" id="launchInput" inputmode="numeric" autocomplete="off" placeholder="اكتب 3 هنا">
+      <button class="launchBtn" type="button" id="launchBtn">دخول الموقع</button>
+    </div>
+    <div class="launchError" id="launchError">الرمز غير صحيح، حاول مرة أخرى.</div>
+  </div>
+</div>
 <div class="rulesOverlay" id="rulesOverlay" aria-modal="true" role="dialog" aria-label="لوحة القوانين">
   <div class="rulesCard">
     <div class="rulesHero">
@@ -58,20 +71,17 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
 <header><nav><img class="logo" src="logo.jpeg"><span class="name">RESPECT MASTER</span>
 <a href="#home">الرئيسية</a><a href="#payment">الدفع</a><button class="cartButton" id="cartButton" type="button">السلة <span class="cartCount" id="cartCount">0</span></button>
 </nav></header>
-
 <main id="home">
 <div class="hero"><div><span class="tag">✦ OFFICIAL FIVEM STORE</span><h1>RESPECT<br>MASTER</h1>
 <p>متجر السيارات والبيوت والحزم الخاص بسيرفر FiveM — واجهة فخمة وسهلة التعديل.</p>
 <div class="buttons"><a class="btn main" href="#featured">استعرض المتجر</a><a class="btn ghost" href="#payment">طريقة الدفع</a></div></div>
 <div class="heroBox"><img src="logo.jpeg" alt="RESPECT MASTER logo"></div></div>
-
 <div class="tabs" role="tablist" aria-label="أقسام المتجر">
   <button class="tab active" type="button" data-target="featured">السيارات المميزة</button>
   <button class="tab" type="button" data-target="cars">السيارات</button>
   <button class="tab" type="button" data-target="houses">البيوت</button>
   <button class="tab" type="button" data-target="bundles">الحزم والأسعار</button>
 </div>
-
 <section id="featured" class="panel active"><div class="head"><h2>السيارات المميزة</h2><span>Featured Vehicles</span></div><div class="grid" id="featuredGrid"></div></section>
 <section id="cars" class="panel"><div class="head"><h2>السيارات</h2><span>Vehicles</span></div><div class="grid" id="carsGrid"></div></section>
 <section id="houses" class="panel"><div class="head"><h2>البيوت</h2><span>Houses</span></div><div class="grid" id="housesGrid"></div></section>
@@ -81,7 +91,6 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
 <div class="buttons"><a id="payBtn" class="btn main" href="#" onclick="return false">الدفع عبر PayPal</a></div></div></section>
 </main>
 <footer>© 2026 RESPECT MASTER — FiveM Store</footer>
-
 <div class="checkoutOverlay" id="checkoutOverlay" aria-hidden="true">
   <div class="checkoutModal" role="dialog" aria-modal="true" aria-label="تأكيد الطلب">
     <h2>تأكيد الطلب</h2>
@@ -99,9 +108,29 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
     </div>
   </div>
 </div>
-
 <script src="products.js"></script>
 <script>
+const launchGate=document.getElementById('launchGate');
+const launchInput=document.getElementById('launchInput');
+const launchBtn=document.getElementById('launchBtn');
+const launchError=document.getElementById('launchError');
+function verifyLaunch(){
+  if(String(launchInput.value).trim()==='3'){
+    launchGate.style.display='none';
+    document.body.classList.remove('modal-open');
+    localStorage.setItem('respect-master-access','1');
+  } else {
+    launchError.classList.add('show');
+  }
+}
+if(localStorage.getItem('respect-master-access')==='1'){
+  launchGate.style.display='none';
+  document.body.classList.remove('modal-open');
+} else {
+  document.body.classList.add('modal-open');
+}
+launchBtn.addEventListener('click', verifyLaunch);
+launchInput.addEventListener('keydown', e=>{ if(e.key==='Enter') verifyLaunch(); });
 const rulesOverlay = document.getElementById('rulesOverlay');
 document.body.classList.add('modal-open');
 document.getElementById('agreeRules').addEventListener('click', () => { rulesOverlay.style.display = 'none'; document.body.classList.remove('modal-open'); });
