@@ -145,7 +145,12 @@ checkoutOverlay.addEventListener("click", e => { if(e.target === checkoutOverlay
 checkoutConfirm.addEventListener("click", () => {
   if (!humanCheck.checked) { botMsg.classList.add("show"); return; }
   closeCheckout();
-  document.getElementById("payment").scrollIntoView({behavior:"smooth"});
+  const payBtn = document.getElementById("payBtn");
+  if (payBtn && payBtn.href && payBtn.href !== "#") {
+    window.location.href = payBtn.href;
+  } else {
+    document.getElementById("payment").scrollIntoView({behavior:"smooth"});
+  }
 });
 humanCheck.addEventListener("change", () => { if (humanCheck.checked) botMsg.classList.remove("show"); });
 updateCart();
