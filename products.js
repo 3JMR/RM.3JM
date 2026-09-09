@@ -1,5 +1,6 @@
 const STORE = {
   paypalUrl: "https://www.paypal.com/ncp/payment/XVW2CC295GCMW", // رابط PayPal
+  sarPerUsd: 3.75,
 
   featured: [
     { name: "tcharger", price: "75 ر.س", image: "images/car1.jpg", description: "تشيل 4 و سرعتها 235" },
