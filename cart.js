@@ -25,7 +25,7 @@ const CartSystem = {
         </div>
         <div class="cartItems" id="cartItems"></div>
         <div class="cartFooter">
-          <div class="cartTotal">المجموع: <strong id="cartTotal">0.00 €</strong></div>
+          <div class="cartTotal">المجموع: <strong id="cartTotal">0.00 ر.س</strong></div>
           <button class="cartCheckout" type="button">متابعة الدفع</button>
           <button class="clearCart" type="button">تفريغ السلة</button>
         </div>
@@ -170,7 +170,7 @@ const CartSystem = {
     }
     
     // تحديث الإجمالي
-    cartTotal.textContent = this.getTotal() + " €";
+    cartTotal.textContent = this.getTotal() + " ر.س";
   },
 
   save() {
