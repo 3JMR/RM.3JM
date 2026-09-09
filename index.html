@@ -26,6 +26,7 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
 .cartOverlay{position:fixed;inset:0;z-index:20;background:#0009;opacity:0;pointer-events:none;transition:opacity .2s}.cartOverlay.open{opacity:1;pointer-events:auto}.cartPanel{position:absolute;top:0;left:0;height:100%;width:min(430px,100%);background:linear-gradient(180deg,#12101a,#0c0a11);border-right:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:12px;overflow:auto}.cartHead{display:flex;justify-content:space-between;align-items:center}.closeCart{background:#ffffff10;border:1px solid var(--line);color:#fff;width:36px;height:36px;border-radius:10px;cursor:pointer}.cartItems{display:grid;gap:10px}.cartItem{display:grid;grid-template-columns:66px 1fr auto;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:14px;background:#ffffff05}.cartItem img{width:66px;height:66px;border-radius:11px;object-fit:cover}.cartItem h3{margin:0 0 4px;font-size:14px}.cartItem p{margin:0;color:var(--muted);font-size:12px}.removeItem{background:#ff4d4d22;border:1px solid #ff4d4d55;color:#ffd6d6;padding:8px 10px;border-radius:10px;cursor:pointer;font-family:inherit}.cartTotal{display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid var(--line)}.cartCheckout{background:linear-gradient(135deg,var(--p),#6c23cd);border:0;color:#fff;padding:13px 15px;border-radius:12px;font-weight:900;cursor:pointer}
 .rulesOverlay{position:fixed;inset:0;z-index:999;background:radial-gradient(circle at top,#28103f 0,#09070f 55%);display:flex;align-items:center;justify-content:center;padding:18px}.rulesCard{width:min(920px,100%);background:linear-gradient(180deg,#14101b,#0b0910);border:1px solid #3a2350;border-radius:24px;padding:20px;box-shadow:0 0 60px #0008}.rulesHero{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:center;margin-bottom:18px}.rulesHero img{width:100%;border-radius:18px}.rulesTitle{margin:0;font-size:26px}.rulesSub{color:#d9baff;margin-top:8px;font-size:13px}.rulesDesc{color:var(--muted);line-height:1.9;font-size:14px}.rulesGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px}.ruleItem{background:#ffffff05;border:1px solid var(--line);border-radius:16px;padding:14px}.ruleItem h3{margin:0 0 8px;font-size:14px}.ruleItem p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}.rulesFooter{display:flex;justify-content:center;margin-top:18px}.agreeBtn{background:linear-gradient(135deg,var(--p),#6c23cd);border:0;color:#fff;padding:13px 16px;border-radius:13px;font-weight:900;cursor:pointer}
 .checkoutOverlay{position:fixed;inset:0;z-index:30;background:#000a;display:none;align-items:center;justify-content:center;padding:18px}.checkoutOverlay.open{display:flex}.checkoutModal{width:min(460px,100%);background:linear-gradient(180deg,#15121e,#0c0a11);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 0 80px #000a}.checkoutModal h2{margin:0 0 12px;font-size:22px}.checkoutBox{display:grid;gap:12px}.checkoutRow{padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#ffffff05}.checkoutRow span{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}.checkoutRow strong{font-size:20px}.checkoutActions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}.checkoutActions button{flex:1;border:0;border-radius:12px;padding:13px 14px;font-weight:900;cursor:pointer}.confirmBtn{background:linear-gradient(135deg,var(--p),#6c23cd);color:#fff}.cancelBtn{background:#ffffff10;color:#fff;border:1px solid var(--line)!important}
+.botCheck{margin-top:12px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#ffffff05}.botCheck label{display:flex;align-items:center;gap:10px;font-size:13px;color:#e9e3f4}.botCheck input[type="checkbox"]{width:18px;height:18px}.botMsg{display:none;margin-top:10px;color:#ffb3b3;font-size:12px;line-height:1.8}.botMsg.show{display:block}
 @media(max-width:760px){nav a{display:none}.hero{grid-template-columns:1fr;padding-top:45px}.heroBox{height:280px}.grid{grid-template-columns:1fr 1fr}.rulesHero{grid-template-columns:1fr}.rulesGrid{grid-template-columns:1fr}.cartPanel{width:100%}}
 @media(max-width:500px){.grid{grid-template-columns:1fr}.head{align-items:start;gap:8px;flex-direction:column}}
 </style>
@@ -88,6 +89,10 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
       <div class="checkoutRow"><span>السعر بالريال السعودي</span><strong id="checkoutSar">0.00 SAR</strong></div>
       <div class="checkoutRow"><span>السعر بالدولار الأمريكي</span><strong id="checkoutUsd">0.00 USD</strong></div>
     </div>
+    <div class="botCheck">
+      <label><input type="checkbox" id="humanCheck"> أنا لست روبوتًا</label>
+      <div class="botMsg" id="botMsg">يرجى تأكيد أنك لست روبوتًا قبل المتابعة.</div>
+    </div>
     <div class="checkoutActions">
       <button class="cancelBtn" type="button" id="checkoutCancel">إلغاء</button>
       <button class="confirmBtn" type="button" id="checkoutConfirm">تأكيد</button>
@@ -105,7 +110,7 @@ function render(id,arr){document.getElementById(id).innerHTML=arr.map(card).join
 render("featuredGrid",STORE.featured);render("carsGrid",STORE.cars);render("housesGrid",STORE.houses);render("bundlesGrid",STORE.bundles);
 if(STORE.paypalUrl){const b=document.getElementById("payBtn"); b.href=STORE.paypalUrl;b.target="_blank";b.rel="noopener";b.onclick=null;document.getElementById("paymentText").textContent="ادفع عبر PayPal من خلال الرابط الرسمي للمتجر.";}
 document.querySelectorAll('.tab').forEach(tab => {tab.addEventListener('click', () => {document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));tab.classList.add('active');document.getElementById(tab.dataset.target).classList.add('active');document.getElementById(tab.dataset.target).scrollIntoView({behavior:'smooth', block:'start'});});});
-const cartKey = "respect-master-cart"; let cart = JSON.parse(localStorage.getItem(cartKey) || "[]"); const cartOverlay = document.createElement("div"); cartOverlay.className = "cartOverlay"; cartOverlay.innerHTML = `<aside class="cartPanel" aria-label="سلة المشتريات"><div class="cartHead"><h2>سلة المشتريات</h2><button class="closeCart" type="button" aria-label="إغلاق">✕</button></div><div class="cartItems"></div><div class="cartTotal"><span>الإجمالي</span><strong>0.00 €</strong></div><button class="cartCheckout" type="button">إتمام الشراء</button></aside>`; document.body.appendChild(cartOverlay); const cartItems = cartOverlay.querySelector(".cartItems"); const cartTotal = cartOverlay.querySelector(".cartTotal strong"); const cartCount = document.getElementById("cartCount");
+const cartKey = "respect-master-cart"; let cart = JSON.parse(localStorage.getItem(cartKey) || "[]"); const cartOverlay = document.createElement("div"); cartOverlay.className = "cartOverlay"; cartOverlay.innerHTML = `<aside class="cartPanel" aria-label="سلة المشتريات"><div class="cartHead"><h2>سلة المشتريات</h2><button class="closeCart" type="button" aria-label="إغلاق">✕</button></div><div class="cartItems"></div><div class="cartTotal"><span>الإجمالي</span><strong>0.00 SAR</strong></div><button class="cartCheckout" type="button">إتمام الشراء</button></aside>`; document.body.appendChild(cartOverlay); const cartItems = cartOverlay.querySelector(".cartItems"); const cartTotal = cartOverlay.querySelector(".cartTotal strong"); const cartCount = document.getElementById("cartCount");
 function priceValue(price){const value = Number.parseFloat(String(price).replace(/[^0-9.,-]/g, "").replace(",", ".")); return Number.isFinite(value) ? value : 0;}
 function saveCart(){localStorage.setItem(cartKey, JSON.stringify(cart));}
 function updateCart(){cartCount.textContent = cart.length; cartItems.innerHTML = cart.length ? cart.map((p, i) => `<div class="cartItem"><img src="${p.image}" alt="${p.name}"><div><h3>${p.name}</h3><p>${p.price}</p></div><button class="removeItem" type="button" data-index="${i}">حذف</button></div>`).join("") : `<p style="color:var(--muted);text-align:center;padding:20px 0">السلة فارغة</p>`; cartTotal.textContent = cart.reduce((sum, p) => sum + priceValue(p.price), 0).toFixed(2) + " SAR"; cartItems.querySelectorAll(".removeItem").forEach(button => button.addEventListener("click", () => { cart.splice(Number(button.dataset.index), 1); saveCart(); updateCart(); }));}
@@ -117,12 +122,16 @@ const checkoutSar = document.getElementById("checkoutSar");
 const checkoutUsd = document.getElementById("checkoutUsd");
 const checkoutCancel = document.getElementById("checkoutCancel");
 const checkoutConfirm = document.getElementById("checkoutConfirm");
+const humanCheck = document.getElementById("humanCheck");
+const botMsg = document.getElementById("botMsg");
 function openCheckout(){
   if(!cart.length) return;
   const sarTotal = cart.reduce((sum, p) => sum + priceValue(p.price), 0);
   const usdTotal = (sarTotal * 0.27).toFixed(2);
   checkoutSar.textContent = `${sarTotal.toFixed(2)} SAR`;
   checkoutUsd.textContent = `${usdTotal} USD`;
+  humanCheck.checked = false;
+  botMsg.classList.remove("show");
   checkoutOverlay.classList.add("open");
   checkoutOverlay.setAttribute("aria-hidden", "false");
 }
@@ -133,7 +142,12 @@ function closeCheckout(){
 cartOverlay.querySelector(".cartCheckout").addEventListener("click", () => { openCheckout(); });
 checkoutCancel.addEventListener("click", closeCheckout);
 checkoutOverlay.addEventListener("click", e => { if(e.target === checkoutOverlay) closeCheckout(); });
-checkoutConfirm.addEventListener("click", () => { closeCheckout(); document.getElementById("payment").scrollIntoView({behavior:"smooth"}); });
+checkoutConfirm.addEventListener("click", () => {
+  if (!humanCheck.checked) { botMsg.classList.add("show"); return; }
+  closeCheckout();
+  document.getElementById("payment").scrollIntoView({behavior:"smooth"});
+});
+humanCheck.addEventListener("change", () => { if (humanCheck.checked) botMsg.classList.remove("show"); });
 updateCart();
 </script>
 </body></html>
