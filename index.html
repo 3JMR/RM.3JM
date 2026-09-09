@@ -9,23 +9,24 @@
 :root{--p:#922cff;--p2:#c77aff;--card:#12101a;--line:#2a2035;--muted:#a9a3b4}
 body.modal-open{overflow:hidden}
 header{position:sticky;top:0;z-index:10;background:#08070bdd;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-nav{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}.logo{width:48px;height:48px;border-radius:13px;object-fit:cover;box-shadow:0 0 28px #922cff66}.name{font-weight:900;letter-spacing:.5px}
+nav{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}.logo{width:48px;height:48px;border-radius:13px;object-fit:cover;box-shadow:0 0 28px #922cff44}
 nav a{color:#d5d0dc;text-decoration:none;font-size:13px;font-weight:700}nav a:hover{color:var(--p2)}.store{background:linear-gradient(135deg,var(--p),#5b18bd);padding:10px 15px;border-radius:11px}
 .hero{max-width:1180px;margin:auto;padding:75px 20px 30px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
 .tag{display:inline-block;border:1px solid #8e37db66;background:#922cff12;color:#d9baff;border-radius:50px;padding:6px 12px;font-size:12px;font-weight:800}
 h1{font-size:clamp(45px,7vw,82px);line-height:.98;margin:18px 0;background:linear-gradient(90deg,#fff,#d5a9ff,#8c27ff);-webkit-background-clip:text;color:transparent}
 .hero p{max-width:620px;color:var(--muted);line-height:2;font-size:15px}.buttons{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
-.btn{padding:12px 19px;border-radius:12px;text-decoration:none;font-weight:900;font-size:13px}.main{background:linear-gradient(135deg,var(--p),#5d18bd)}.ghost{border:1px solid var(--line);color:#d4cfe0;background:#ffffff05}
-.heroBox{height:370px;border:1px solid #3a2350;border-radius:28px;background:radial-gradient(circle,#4b176a 0,#17101f 42%,#0c0a10 75%);display:grid;place-items:center;box-shadow:0 0 90px #922cff17;overflow:hidden}.heroBox img{width:100%;height:100%;object-fit:cover;opacity:.92}
-section{max-width:1180px;margin:auto;padding:38px 20px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px;gap:10px;flex-wrap:wrap}.head h2{margin:0;font-size:27px}.head span{font-size:12px;color:var(--p2)}
-.tabs{max-width:1180px;margin:0 auto;padding:0 20px 12px;display:flex;gap:10px;flex-wrap:wrap}.tab{border:1px solid var(--line);background:#ffffff06;color:#d7d2e0;padding:11px 15px;border-radius:12px;cursor:pointer;font:inherit;font-weight:800;font-size:13px}.tab.active{background:linear-gradient(135deg,var(--p),#5c17bc);border-color:transparent}.panel{display:none}.panel.active{display:block}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:linear-gradient(145deg,#15121e,#0e0c13);border:1px solid var(--line);border-radius:19px;padding:12px;overflow:hidden}.pic{height:210px;border-radius:15px;overflow:hidden;background:#0a0910;display:grid;place-items:center}.pic img{width:100%;height:100%;object-fit:cover}.card h3{margin:12px 0 6px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.8;min-height:48px}.bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}.price{color:#d9baff;font-weight:900}.buy{border:0;background:linear-gradient(135deg,var(--p),#5c17bc);color:#fff;padding:10px 13px;border-radius:10px;cursor:pointer;font-family:inherit;font-weight:800}
+.btn{padding:12px 19px;border-radius:12px;text-decoration:none;font-weight:900;font-size:13px}.main{background:linear-gradient(135deg,var(--p),#5d18bd)}.ghost{border:1px solid var(--line);color:#d9d2e8}
+.heroBox{height:370px;border:1px solid #3a2350;border-radius:28px;background:radial-gradient(circle,#4b176a 0,#17101f 42%,#0c0a10 75%);display:grid;place-items:center;box-shadow:0 0 90px #922cff17}.heroBox img{max-width:68%;filter:drop-shadow(0 0 25px #a03cff88)}
+section{max-width:1180px;margin:auto;padding:38px 20px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px;gap:10px;flex-wrap:wrap}.head h2{margin:0;font-size:27px}.head span{color:var(--muted);font-size:12px}
+.tabs{max-width:1180px;margin:0 auto;padding:0 20px 12px;display:flex;gap:10px;flex-wrap:wrap}.tab{border:1px solid var(--line);background:#ffffff06;color:#d7d2e0;padding:11px 15px;border-radius:14px;cursor:pointer;font:inherit;font-size:12px;font-weight:800}.tab.active{background:linear-gradient(135deg,var(--p),#5d18bd);border-color:transparent}.panel{display:none}.panel.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:linear-gradient(145deg,#15121e,#0e0c13);border:1px solid var(--line);border-radius:19px;padding:12px;overflow:hidden}.pic{height:175px;border-radius:14px;background:#0c0a10;display:grid;place-items:center;overflow:hidden}.pic img{width:100%;height:100%;object-fit:cover}.card h3{margin:12px 0 8px;font-size:16px}.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.8;min-height:56px}.bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}.price{font-weight:900;color:#f3c9ff}.buy{background:linear-gradient(135deg,var(--p),#6c23cd);color:#fff;border:0;padding:10px 13px;border-radius:11px;font-weight:900;cursor:pointer}
 .feature{padding:22px;border:1px solid var(--line);border-radius:17px;background:#100e16}.feature b{font-size:15px}.feature p{color:var(--muted);font-size:12px;line-height:1.8}
 footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:#777080;padding:25px;font-size:11px}
-.cartButton{border:1px solid #8e37db66;background:#922cff18;color:#fff;padding:10px 14px;border-radius:11px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}.cartCount{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:999px;margin-right:6px;background:var(--p);font-size:11px}
-.cartOverlay{position:fixed;inset:0;z-index:20;background:#0009;opacity:0;pointer-events:none;transition:opacity .2s}.cartOverlay.open{opacity:1;pointer-events:auto}.cartPanel{position:absolute;top:0;left:0;width:min(380px,100%);height:100%;background:#0f0d15;border-right:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:15px}.cartHead{display:flex;justify-content:space-between;align-items:center}.cartHead h2{margin:0;font-size:20px}.closeCart{border:0;background:#ffffff10;color:#fff;width:36px;height:36px;border-radius:10px;cursor:pointer}.cartItems{flex:1;overflow:auto;display:flex;flex-direction:column;gap:12px}.cartItem{display:grid;grid-template-columns:68px 1fr auto;gap:12px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:15px;background:#120f18}.cartItem img{width:68px;height:68px;object-fit:cover;border-radius:10px}.cartItem h3{margin:0 0 4px;font-size:14px}.cartItem p{margin:0;color:var(--muted);font-size:12px}.removeItem{border:0;background:#ff4d5f22;color:#ffb9c1;border-radius:10px;padding:9px 11px;cursor:pointer}.cartTotal{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--line)}.cartCheckout{border:0;background:linear-gradient(135deg,var(--p),#5b18bd);color:#fff;padding:12px 15px;border-radius:12px;cursor:pointer;font-family:inherit;font-weight:900}
-.rulesOverlay{position:fixed;inset:0;z-index:999;background:radial-gradient(circle at top,#28103f 0,#09070f 55%);display:flex;align-items:center;justify-content:center;padding:18px}.rulesCard{width:min(1200px,100%);max-height:95vh;overflow:auto;background:#0b0812;border:1px solid #6a2cff55;border-radius:28px;box-shadow:0 0 0 1px #b15cff22,0 0 50px #7b2cff33;padding:18px}.rulesHero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center;padding:10px 8px 20px;border-bottom:1px solid var(--line)}.rulesHero img{width:100%;height:100%;object-fit:cover;border-radius:22px;border:1px solid #7a2cff55}.rulesTitle{font-size:clamp(30px,4vw,62px);line-height:1.05;margin:0;background:linear-gradient(90deg,#fff,#c6b6ff,#8c27ff);-webkit-background-clip:text;color:transparent}.rulesSub{margin:10px 0 0;color:#d9baff;font-size:18px;font-weight:800}.rulesDesc{margin:14px 0 0;color:#ddd;line-height:2}.rulesGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:18px 6px}.ruleItem{border:1px solid #7a2cff77;border-radius:20px;padding:18px;background:linear-gradient(180deg,#15101f,#0d0a14);box-shadow:0 0 0 1px #a24dff18 inset}.ruleItem h3{margin:0 0 8px;font-size:18px;color:#fff}.ruleItem p{margin:0;color:#d0cadb;line-height:1.9;font-size:14px}.rulesFooter{display:flex;justify-content:center;padding:10px 0 4px}.agreeBtn{border:0;background:linear-gradient(135deg,var(--p),#5c17bc);color:#fff;padding:14px 22px;border-radius:14px;font-family:inherit;font-size:15px;font-weight:900;cursor:pointer;min-width:220px}.agreeBtn:hover{filter:brightness(1.08)}
-@media(max-width:760px){nav a{display:none}.hero{grid-template-columns:1fr;padding-top:45px}.heroBox{height:280px}.grid{grid-template-columns:1fr 1fr}.rulesHero{grid-template-columns:1fr}.rulesGrid{grid-template-columns:1fr}.rulesCard{padding:14px}}
+.cartButton{border:1px solid #8e37db66;background:#922cff18;color:#fff;padding:10px 14px;border-radius:11px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}.cartCount{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;background:#fff;color:#111;border-radius:999px;font-size:11px;margin-right:4px}
+.cartOverlay{position:fixed;inset:0;z-index:20;background:#0009;opacity:0;pointer-events:none;transition:opacity .2s}.cartOverlay.open{opacity:1;pointer-events:auto}.cartPanel{position:absolute;top:0;left:0;height:100%;width:min(430px,100%);background:linear-gradient(180deg,#12101a,#0c0a11);border-right:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:12px;overflow:auto}.cartHead{display:flex;justify-content:space-between;align-items:center}.closeCart{background:#ffffff10;border:1px solid var(--line);color:#fff;width:36px;height:36px;border-radius:10px;cursor:pointer}.cartItems{display:grid;gap:10px}.cartItem{display:grid;grid-template-columns:66px 1fr auto;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:14px;background:#ffffff05}.cartItem img{width:66px;height:66px;border-radius:11px;object-fit:cover}.cartItem h3{margin:0 0 4px;font-size:14px}.cartItem p{margin:0;color:var(--muted);font-size:12px}.removeItem{background:#ff4d4d22;border:1px solid #ff4d4d55;color:#ffd6d6;padding:8px 10px;border-radius:10px;cursor:pointer;font-family:inherit}.cartTotal{display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid var(--line)}.cartCheckout{background:linear-gradient(135deg,var(--p),#6c23cd);border:0;color:#fff;padding:13px 15px;border-radius:12px;font-weight:900;cursor:pointer}
+.rulesOverlay{position:fixed;inset:0;z-index:999;background:radial-gradient(circle at top,#28103f 0,#09070f 55%);display:flex;align-items:center;justify-content:center;padding:18px}.rulesCard{width:min(920px,100%);background:linear-gradient(180deg,#14101b,#0b0910);border:1px solid #3a2350;border-radius:24px;padding:20px;box-shadow:0 0 60px #0008}.rulesHero{display:grid;grid-template-columns:200px 1fr;gap:18px;align-items:center;margin-bottom:18px}.rulesHero img{width:100%;border-radius:18px}.rulesTitle{margin:0;font-size:26px}.rulesSub{color:#d9baff;margin-top:8px;font-size:13px}.rulesDesc{color:var(--muted);line-height:1.9;font-size:14px}.rulesGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px}.ruleItem{background:#ffffff05;border:1px solid var(--line);border-radius:16px;padding:14px}.ruleItem h3{margin:0 0 8px;font-size:14px}.ruleItem p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}.rulesFooter{display:flex;justify-content:center;margin-top:18px}.agreeBtn{background:linear-gradient(135deg,var(--p),#6c23cd);border:0;color:#fff;padding:13px 16px;border-radius:13px;font-weight:900;cursor:pointer}
+.checkoutOverlay{position:fixed;inset:0;z-index:30;background:#000a;display:none;align-items:center;justify-content:center;padding:18px}.checkoutOverlay.open{display:flex}.checkoutModal{width:min(460px,100%);background:linear-gradient(180deg,#15121e,#0c0a11);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 0 80px #000a}.checkoutModal h2{margin:0 0 12px;font-size:22px}.checkoutBox{display:grid;gap:12px}.checkoutRow{padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#ffffff05}.checkoutRow span{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}.checkoutRow strong{font-size:20px}.checkoutActions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}.checkoutActions button{flex:1;border:0;border-radius:12px;padding:13px 14px;font-weight:900;cursor:pointer}.confirmBtn{background:linear-gradient(135deg,var(--p),#6c23cd);color:#fff}.cancelBtn{background:#ffffff10;color:#fff;border:1px solid var(--line)!important}
+@media(max-width:760px){nav a{display:none}.hero{grid-template-columns:1fr;padding-top:45px}.heroBox{height:280px}.grid{grid-template-columns:1fr 1fr}.rulesHero{grid-template-columns:1fr}.rulesGrid{grid-template-columns:1fr}.cartPanel{width:100%}}
 @media(max-width:500px){.grid{grid-template-columns:1fr}.head{align-items:start;gap:8px;flex-direction:column}}
 </style>
 </head>
@@ -37,12 +38,12 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
       <div>
         <h2 class="rulesTitle">قوانين متجر<br>ريسبكت ماستر</h2>
         <div class="rulesSub">يجب الموافقة على القوانين للدخول إلى الموقع</div>
-        <p class="rulesDesc">بقراءتك للقوانين أدناه فإنك توافق على شروط المتجر بالكامل. إذا لم توافق، يرجى عدم استخدام الموقع أو إتمام أي عملية شراء.</p>
+        <p class="rulesDesc">بقراءتك للقوانين أدناه فإنك توافق على شروط المتجر بالكامل. إذا لم توافق، يرجى عدم استخدام الموقع أو الشراء من المتجر.</p>
       </div>
     </div>
     <div class="rulesGrid">
       <div class="ruleItem"><h3>01 — الشراء والدفع</h3><p>يجب التأكد من اختيار المنتج الصحيح قبل الدفع. الإدارة غير مسؤولة عن أي خطأ في اختيار المنتج.</p></div>
-      <div class="ruleItem"><h3>02 — المشتريات النهائية</h3><p>جميع المشتريات نهائية ولا يمكن استرداد ال��نتج إلا في حال وجود مشكلة من طرف المتجر ويتم إثباتها بالدعم.</p></div>
+      <div class="ruleItem"><h3>02 — المشتريات النهائية</h3><p>جميع المشتريات نهائية ولا يمكن استرداد المنتج إلا في حال وجود مشكلة من طرف المتجر ويتم إثباتها بالدعم.</p></div>
       <div class="ruleItem"><h3>03 — مشاركة المنتجات والحسابات</h3><p>يمنع مشاركة المنتجات أو الحسابات المشتراة مع الآخرين، وسيتم التعامل مع المخالفة حسب القوانين.</p></div>
       <div class="ruleItem"><h3>04 — إعادة البيع</h3><p>يمنع إعادة بيع المنتجات أو تحويلها لأي شخص آخر بدون إذن الإدارة.</p></div>
       <div class="ruleItem"><h3>05 — استغلال الثغرات</h3><p>يمنع استغلال أي ثغرة أو خطأ في المتجر أو في طريقة الشراء، وأي محاولة من هذا النوع تؤدي إلى إيقاف الحساب ومحاسبة المخالف.</p></div>
@@ -80,6 +81,20 @@ footer{margin-top:30px;border-top:1px solid var(--line);text-align:center;color:
 </main>
 <footer>© 2026 RESPECT MASTER — FiveM Store</footer>
 
+<div class="checkoutOverlay" id="checkoutOverlay" aria-hidden="true">
+  <div class="checkoutModal" role="dialog" aria-modal="true" aria-label="تأكيد الطلب">
+    <h2>تأكيد الطلب</h2>
+    <div class="checkoutBox">
+      <div class="checkoutRow"><span>السعر بالريال السعودي</span><strong id="checkoutSar">0.00 SAR</strong></div>
+      <div class="checkoutRow"><span>السعر بالدولار الأمريكي</span><strong id="checkoutUsd">0.00 USD</strong></div>
+    </div>
+    <div class="checkoutActions">
+      <button class="cancelBtn" type="button" id="checkoutCancel">إلغاء</button>
+      <button class="confirmBtn" type="button" id="checkoutConfirm">تأكيد</button>
+    </div>
+  </div>
+</div>
+
 <script src="products.js"></script>
 <script>
 const rulesOverlay = document.getElementById('rulesOverlay');
@@ -93,11 +108,32 @@ document.querySelectorAll('.tab').forEach(tab => {tab.addEventListener('click', 
 const cartKey = "respect-master-cart"; let cart = JSON.parse(localStorage.getItem(cartKey) || "[]"); const cartOverlay = document.createElement("div"); cartOverlay.className = "cartOverlay"; cartOverlay.innerHTML = `<aside class="cartPanel" aria-label="سلة المشتريات"><div class="cartHead"><h2>سلة المشتريات</h2><button class="closeCart" type="button" aria-label="إغلاق">✕</button></div><div class="cartItems"></div><div class="cartTotal"><span>الإجمالي</span><strong>0.00 €</strong></div><button class="cartCheckout" type="button">إتمام الشراء</button></aside>`; document.body.appendChild(cartOverlay); const cartItems = cartOverlay.querySelector(".cartItems"); const cartTotal = cartOverlay.querySelector(".cartTotal strong"); const cartCount = document.getElementById("cartCount");
 function priceValue(price){const value = Number.parseFloat(String(price).replace(/[^0-9.,-]/g, "").replace(",", ".")); return Number.isFinite(value) ? value : 0;}
 function saveCart(){localStorage.setItem(cartKey, JSON.stringify(cart));}
-function updateCart(){cartCount.textContent = cart.length; cartItems.innerHTML = cart.length ? cart.map((p, i) => `<div class="cartItem"><img src="${p.image}" alt="${p.name}"><div><h3>${p.name}</h3><p>${p.price}</p></div><button class="removeItem" type="button" data-index="${i}">حذف</button></div>`).join("") : `<p style="color:var(--muted);text-align:center;padding:20px 0">السلة فارغة</p>`; cartTotal.textContent = cart.reduce((sum, p) => sum + priceValue(p.price), 0).toFixed(2) + " €"; cartItems.querySelectorAll(".removeItem").forEach(button => button.addEventListener("click", () => { cart.splice(Number(button.dataset.index), 1); saveCart(); updateCart(); }));}
+function updateCart(){cartCount.textContent = cart.length; cartItems.innerHTML = cart.length ? cart.map((p, i) => `<div class="cartItem"><img src="${p.image}" alt="${p.name}"><div><h3>${p.name}</h3><p>${p.price}</p></div><button class="removeItem" type="button" data-index="${i}">حذف</button></div>`).join("") : `<p style="color:var(--muted);text-align:center;padding:20px 0">السلة فارغة</p>`; cartTotal.textContent = cart.reduce((sum, p) => sum + priceValue(p.price), 0).toFixed(2) + " SAR"; cartItems.querySelectorAll(".removeItem").forEach(button => button.addEventListener("click", () => { cart.splice(Number(button.dataset.index), 1); saveCart(); updateCart(); }));}
 function addToCart(product){cart.push(product);saveCart();updateCart();cartOverlay.classList.add("open");}
 document.getElementById("cartButton").addEventListener("click", () => cartOverlay.classList.add("open"));
 cartOverlay.addEventListener("click", event => {if(event.target === cartOverlay || event.target.closest(".closeCart")) cartOverlay.classList.remove("open")});
-cartOverlay.querySelector(".cartCheckout").addEventListener("click", () => { if(!cart.length) return; document.getElementById("payment").scrollIntoView({behavior:"smooth"}); cartOverlay.classList.remove("open"); });
+const checkoutOverlay = document.getElementById("checkoutOverlay");
+const checkoutSar = document.getElementById("checkoutSar");
+const checkoutUsd = document.getElementById("checkoutUsd");
+const checkoutCancel = document.getElementById("checkoutCancel");
+const checkoutConfirm = document.getElementById("checkoutConfirm");
+function openCheckout(){
+  if(!cart.length) return;
+  const sarTotal = cart.reduce((sum, p) => sum + priceValue(p.price), 0);
+  const usdTotal = (sarTotal * 0.27).toFixed(2);
+  checkoutSar.textContent = `${sarTotal.toFixed(2)} SAR`;
+  checkoutUsd.textContent = `${usdTotal} USD`;
+  checkoutOverlay.classList.add("open");
+  checkoutOverlay.setAttribute("aria-hidden", "false");
+}
+function closeCheckout(){
+  checkoutOverlay.classList.remove("open");
+  checkoutOverlay.setAttribute("aria-hidden", "true");
+}
+cartOverlay.querySelector(".cartCheckout").addEventListener("click", () => { openCheckout(); });
+checkoutCancel.addEventListener("click", closeCheckout);
+checkoutOverlay.addEventListener("click", e => { if(e.target === checkoutOverlay) closeCheckout(); });
+checkoutConfirm.addEventListener("click", () => { closeCheckout(); document.getElementById("payment").scrollIntoView({behavior:"smooth"}); });
 updateCart();
 </script>
 </body></html>
